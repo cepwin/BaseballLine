@@ -11,13 +11,107 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    
+    private var backgroundTask: UIBackgroundTaskIdentifier = UIBackgroundTaskInvalid
     var window: UIWindow?
+    
+    var controller = MasterViewController()
+
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        // Override point for customization after application launch.
+        let tabBarController = self.window!.rootViewController as! TabBarController
+        let navigationController = tabBarController.viewControllers?[0] as! UINavigationController
+        self.controller = navigationController.topViewController as! MasterViewController
+        let configController = tabBarController.viewControllers?[1]as! ConfigViewController
         return true
     }
+    
+    
+    func registerBackgroundTask() {
+        backgroundTask = UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler {
+            [unowned self] in
+            self.endBackgroundTask()
+        }
+        assert(backgroundTask != UIBackgroundTaskInvalid)
+    }
+    
+    func endBackgroundTask() {
+        UIApplication.sharedApplication().endBackgroundTask(backgroundTask)
+        backgroundTask = UIBackgroundTaskInvalid
+    }
+    
+    func application(application: UIApplication,
+        handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: (([NSObject : AnyObject]!) -> Void)!) {
+            registerBackgroundTask()
+            NSLog("in handle code")
+            let tabBarController = self.window!.rootViewController as! TabBarController
+            
+            let request = userInfo as? NSDictionary
+            
+            let content = request?.objectForKey("content") as! String
+            
+            if content == "getdata" {
+                let url = NSURL(string: "https://erikberg.com/mlb/standings.json")
+                let request = NSMutableURLRequest(URL: url!)
+                let bundle = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
+                var userAgent = "BaseballLine/\(bundle)(cepwin@gmail.com)"
+                request.setValue(userAgent, forHTTPHeaderField: "User-Agent")
+                var loadTeams = false
+                if tabBarController.teams.count == 0 {
+                    loadTeams = true
+                }
+                NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
+                    let httpResponse = response as! NSHTTPURLResponse
+                    if(httpResponse.statusCode == 429) {
+                        let dictionary:NSDictionary = httpResponse.allHeaderFields
+                        let times = dictionary.valueForKey("xmlstats-api-remaining")!.integerValue as NSInteger
+                        if(times == 0) {
+                            let date = NSDate().timeIntervalSince1970 as NSTimeInterval
+                            let xmlReset:NSString? = dictionary.valueForKey("xmlstats-api-reset") as? NSString
+                            if(xmlReset != nil) {
+                                let  distance = date.distanceTo((xmlReset)!.doubleValue) as Double
+                                NSLog("waiting \(distance) seconds to retry")
+                                reply(["content":["error!":"error"]])
+                                self.endBackgroundTask()
+                                
+                                
+                            }
+                        }
+                    }
+                    if(error == nil) {
+                        println(NSString(data: data, encoding: NSUTF8StringEncoding))
+                        var error:NSError? = nil
+                        
+                        self.controller.parsedObject = NSJSONSerialization.JSONObjectWithData(data, options:   NSJSONReadingOptions.AllowFragments, error:&error) as! NSDictionary
+                        if(error == nil) {
+                            let res1 = self.controller.parsedObject.mutableArrayValueForKey("standing")
+                            self.controller.loadDataIntoObjs(res1)
+                            //            self.transData = ["myData":self.teamDictSM]
+                            reply(["content":self.controller.teamDictSM])
+                            self.endBackgroundTask()
+                            
+                        }
+                    }
+                    else {
+                        reply(["content":["error!":"error"]])
+                        self.endBackgroundTask()
+                        
+                    }
+                }
+                
+            }
+            else {
+                reply(["success":"yes"])
+                endBackgroundTask()
+                
+            }
+            
+    }
+    
+
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -8,12 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		A21185C21B2E3ECF006E35B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21185C11B2E3ECF006E35B3 /* AppDelegate.swift */; };
-		A21185C41B2E3ED0006E35B3 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21185C31B2E3ED0006E35B3 /* MasterViewController.swift */; };
 		A21185C61B2E3ED0006E35B3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21185C51B2E3ED0006E35B3 /* DetailViewController.swift */; };
-		A21185C91B2E3ED0006E35B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A21185C71B2E3ED0006E35B3 /* Main.storyboard */; };
 		A21185CB1B2E3ED0006E35B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A21185CA1B2E3ED0006E35B3 /* Images.xcassets */; };
-		A21185CE1B2E3ED1006E35B3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A21185CC1B2E3ED1006E35B3 /* LaunchScreen.xib */; };
 		A21185DA1B2E3ED1006E35B3 /* BaseballLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21185D91B2E3ED1006E35B3 /* BaseballLineTests.swift */; };
+		A21185EF1B2E3F94006E35B3 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21185EE1B2E3F94006E35B3 /* NotificationController.swift */; };
+		A21185F11B2E3F94006E35B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A21185F01B2E3F94006E35B3 /* Images.xcassets */; };
+		A21185F51B2E3F94006E35B3 /* BaseballLine WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = A21185F41B2E3F94006E35B3 /* BaseballLine WatchKit App.app */; };
+		A21185FD1B2E3F94006E35B3 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A21185FB1B2E3F94006E35B3 /* Interface.storyboard */; };
+		A21185FF1B2E3F94006E35B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A21185FE1B2E3F94006E35B3 /* Images.xcassets */; };
+		A21186021B2E3F94006E35B3 /* BaseballLine WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A21185E71B2E3F93006E35B3 /* BaseballLine WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A2962B201B2FAAC700AA96C2 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2962B1E1B2FAAC700AA96C2 /* MasterViewController.swift */; };
+		A2962B211B2FAAC700AA96C2 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2962B1F1B2FAAC700AA96C2 /* TabBarController.swift */; };
+		A2962B231B2FABCC00AA96C2 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2962B221B2FABCC00AA96C2 /* ConfigViewController.swift */; };
+		A2962B251B2FABF500AA96C2 /* ConfigTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2962B241B2FABF500AA96C2 /* ConfigTableViewCell.swift */; };
+		A2CBCCA21B2FB1AA00034EE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2CBCCA01B2FB1AA00034EE0 /* Main.storyboard */; };
+		A2CBCCA51B2FB1B200034EE0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2CBCCA31B2FB1B200034EE0 /* LaunchScreen.xib */; };
+		A2CBCCAB1B2FB78200034EE0 /* TeamDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CBCCA81B2FB78200034EE0 /* TeamDetailController.swift */; };
+		A2CBCCAC1B2FB78200034EE0 /* TeamDetailRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CBCCA91B2FB78200034EE0 /* TeamDetailRowController.swift */; };
+		A2CBCCAF1B2FB7BE00034EE0 /* TeamsRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CBCCAE1B2FB7BE00034EE0 /* TeamsRowController.swift */; };
+		A2CBCCB51B2FC37700034EE0 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CBCCB21B2FBEF100034EE0 /* InterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,20 +37,66 @@
 			remoteGlobalIDString = A21185BB1B2E3ECE006E35B3;
 			remoteInfo = BaseballLine;
 		};
+		A21185F61B2E3F94006E35B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A21185B41B2E3ECE006E35B3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A21185F31B2E3F94006E35B3;
+			remoteInfo = "BaseballLine WatchKit App";
+		};
+		A21186001B2E3F94006E35B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A21185B41B2E3ECE006E35B3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A21185E61B2E3F93006E35B3;
+			remoteInfo = "BaseballLine WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A21186091B2E3F94006E35B3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A21186021B2E3F94006E35B3 /* BaseballLine WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A21185BC1B2E3ECF006E35B3 /* BaseballLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseballLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21185C01B2E3ECF006E35B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A21185C11B2E3ECF006E35B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A21185C31B2E3ED0006E35B3 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		A21185C51B2E3ED0006E35B3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		A21185C81B2E3ED0006E35B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A21185CA1B2E3ED0006E35B3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		A21185CD1B2E3ED1006E35B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A21185D31B2E3ED1006E35B3 /* BaseballLineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaseballLineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21185D81B2E3ED1006E35B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A21185D91B2E3ED1006E35B3 /* BaseballLineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseballLineTests.swift; sourceTree = "<group>"; };
+		A21185E71B2E3F93006E35B3 /* BaseballLine WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BaseballLine WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A21185EA1B2E3F93006E35B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A21185EB1B2E3F94006E35B3 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		A21185EE1B2E3F94006E35B3 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		A21185F01B2E3F94006E35B3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A21185F41B2E3F94006E35B3 /* BaseballLine WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BaseballLine WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A21185FA1B2E3F94006E35B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A21185FC1B2E3F94006E35B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		A21185FE1B2E3F94006E35B3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A2962B1E1B2FAAC700AA96C2 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		A2962B1F1B2FAAC700AA96C2 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		A2962B221B2FABCC00AA96C2 /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
+		A2962B241B2FABF500AA96C2 /* ConfigTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigTableViewCell.swift; sourceTree = "<group>"; };
+		A2962B261B2FAECB00AA96C2 /* BaseballLine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BaseballLine.entitlements; sourceTree = "<group>"; };
+		A2962B271B2FAEDD00AA96C2 /* BaseballLine WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "BaseballLine WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		A2CBCCA11B2FB1AA00034EE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A2CBCCA41B2FB1B200034EE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		A2CBCCA81B2FB78200034EE0 /* TeamDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamDetailController.swift; sourceTree = "<group>"; };
+		A2CBCCA91B2FB78200034EE0 /* TeamDetailRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamDetailRowController.swift; sourceTree = "<group>"; };
+		A2CBCCAE1B2FB7BE00034EE0 /* TeamsRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamsRowController.swift; sourceTree = "<group>"; };
+		A2CBCCB21B2FBEF100034EE0 /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +114,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A21185E41B2E3F93006E35B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -63,6 +129,8 @@
 			children = (
 				A21185BE1B2E3ECF006E35B3 /* BaseballLine */,
 				A21185D61B2E3ED1006E35B3 /* BaseballLineTests */,
+				A21185E81B2E3F93006E35B3 /* BaseballLine WatchKit Extension */,
+				A21185F81B2E3F94006E35B3 /* BaseballLine WatchKit App */,
 				A21185BD1B2E3ECF006E35B3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +140,8 @@
 			children = (
 				A21185BC1B2E3ECF006E35B3 /* BaseballLine.app */,
 				A21185D31B2E3ED1006E35B3 /* BaseballLineTests.xctest */,
+				A21185E71B2E3F93006E35B3 /* BaseballLine WatchKit Extension.appex */,
+				A21185F41B2E3F94006E35B3 /* BaseballLine WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,12 +149,16 @@
 		A21185BE1B2E3ECF006E35B3 /* BaseballLine */ = {
 			isa = PBXGroup;
 			children = (
+				A2CBCCA31B2FB1B200034EE0 /* LaunchScreen.xib */,
+				A2CBCCA01B2FB1AA00034EE0 /* Main.storyboard */,
+				A2962B261B2FAECB00AA96C2 /* BaseballLine.entitlements */,
+				A2962B241B2FABF500AA96C2 /* ConfigTableViewCell.swift */,
+				A2962B1E1B2FAAC700AA96C2 /* MasterViewController.swift */,
+				A2962B221B2FABCC00AA96C2 /* ConfigViewController.swift */,
+				A2962B1F1B2FAAC700AA96C2 /* TabBarController.swift */,
 				A21185C11B2E3ECF006E35B3 /* AppDelegate.swift */,
-				A21185C31B2E3ED0006E35B3 /* MasterViewController.swift */,
 				A21185C51B2E3ED0006E35B3 /* DetailViewController.swift */,
-				A21185C71B2E3ED0006E35B3 /* Main.storyboard */,
 				A21185CA1B2E3ED0006E35B3 /* Images.xcassets */,
-				A21185CC1B2E3ED1006E35B3 /* LaunchScreen.xib */,
 				A21185BF1B2E3ECF006E35B3 /* Supporting Files */,
 			);
 			path = BaseballLine;
@@ -115,6 +189,48 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A21185E81B2E3F93006E35B3 /* BaseballLine WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A2CBCCB21B2FBEF100034EE0 /* InterfaceController.swift */,
+				A2CBCCAE1B2FB7BE00034EE0 /* TeamsRowController.swift */,
+				A2CBCCA81B2FB78200034EE0 /* TeamDetailController.swift */,
+				A2CBCCA91B2FB78200034EE0 /* TeamDetailRowController.swift */,
+				A2962B271B2FAEDD00AA96C2 /* BaseballLine WatchKit Extension.entitlements */,
+				A21185EE1B2E3F94006E35B3 /* NotificationController.swift */,
+				A21185F01B2E3F94006E35B3 /* Images.xcassets */,
+				A21185E91B2E3F93006E35B3 /* Supporting Files */,
+			);
+			path = "BaseballLine WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		A21185E91B2E3F93006E35B3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A21185EA1B2E3F93006E35B3 /* Info.plist */,
+				A21185EB1B2E3F94006E35B3 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A21185F81B2E3F94006E35B3 /* BaseballLine WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				A21185FB1B2E3F94006E35B3 /* Interface.storyboard */,
+				A21185FE1B2E3F94006E35B3 /* Images.xcassets */,
+				A21185F91B2E3F94006E35B3 /* Supporting Files */,
+			);
+			path = "BaseballLine WatchKit App";
+			sourceTree = "<group>";
+		};
+		A21185F91B2E3F94006E35B3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A21185FA1B2E3F94006E35B3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -125,10 +241,12 @@
 				A21185B81B2E3ECE006E35B3 /* Sources */,
 				A21185B91B2E3ECE006E35B3 /* Frameworks */,
 				A21185BA1B2E3ECE006E35B3 /* Resources */,
+				A21186091B2E3F94006E35B3 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A21186011B2E3F94006E35B3 /* PBXTargetDependency */,
 			);
 			name = BaseballLine;
 			productName = BaseballLine;
@@ -153,6 +271,39 @@
 			productReference = A21185D31B2E3ED1006E35B3 /* BaseballLineTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		A21185E61B2E3F93006E35B3 /* BaseballLine WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A21186061B2E3F94006E35B3 /* Build configuration list for PBXNativeTarget "BaseballLine WatchKit Extension" */;
+			buildPhases = (
+				A21185E31B2E3F93006E35B3 /* Sources */,
+				A21185E41B2E3F93006E35B3 /* Frameworks */,
+				A21185E51B2E3F93006E35B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A21185F71B2E3F94006E35B3 /* PBXTargetDependency */,
+			);
+			name = "BaseballLine WatchKit Extension";
+			productName = "BaseballLine WatchKit Extension";
+			productReference = A21185E71B2E3F93006E35B3 /* BaseballLine WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		A21185F31B2E3F94006E35B3 /* BaseballLine WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A21186031B2E3F94006E35B3 /* Build configuration list for PBXNativeTarget "BaseballLine WatchKit App" */;
+			buildPhases = (
+				A21185F21B2E3F94006E35B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BaseballLine WatchKit App";
+			productName = "BaseballLine WatchKit App";
+			productReference = A21185F41B2E3F94006E35B3 /* BaseballLine WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -164,10 +315,28 @@
 				TargetAttributes = {
 					A21185BB1B2E3ECE006E35B3 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 8S36RASUUB;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					A21185D21B2E3ED1006E35B3 = {
 						CreatedOnToolsVersion = 6.3.2;
 						TestTargetID = A21185BB1B2E3ECE006E35B3;
+					};
+					A21185E61B2E3F93006E35B3 = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 8S36RASUUB;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					A21185F31B2E3F94006E35B3 = {
+						CreatedOnToolsVersion = 6.3.2;
 					};
 				};
 			};
@@ -186,6 +355,8 @@
 			targets = (
 				A21185BB1B2E3ECE006E35B3 /* BaseballLine */,
 				A21185D21B2E3ED1006E35B3 /* BaseballLineTests */,
+				A21185E61B2E3F93006E35B3 /* BaseballLine WatchKit Extension */,
+				A21185F31B2E3F94006E35B3 /* BaseballLine WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -195,9 +366,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A21185C91B2E3ED0006E35B3 /* Main.storyboard in Resources */,
-				A21185CE1B2E3ED1006E35B3 /* LaunchScreen.xib in Resources */,
 				A21185CB1B2E3ED0006E35B3 /* Images.xcassets in Resources */,
+				A2CBCCA51B2FB1B200034EE0 /* LaunchScreen.xib in Resources */,
+				A2CBCCA21B2FB1AA00034EE0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +376,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A21185E51B2E3F93006E35B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A21185F51B2E3F94006E35B3 /* BaseballLine WatchKit App.app in Resources */,
+				A21185F11B2E3F94006E35B3 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A21185F21B2E3F94006E35B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A21185FD1B2E3F94006E35B3 /* Interface.storyboard in Resources */,
+				A21185FF1B2E3F94006E35B3 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,8 +405,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A21185C61B2E3ED0006E35B3 /* DetailViewController.swift in Sources */,
-				A21185C41B2E3ED0006E35B3 /* MasterViewController.swift in Sources */,
+				A2962B211B2FAAC700AA96C2 /* TabBarController.swift in Sources */,
 				A21185C21B2E3ECF006E35B3 /* AppDelegate.swift in Sources */,
+				A2962B251B2FABF500AA96C2 /* ConfigTableViewCell.swift in Sources */,
+				A2962B231B2FABCC00AA96C2 /* ConfigViewController.swift in Sources */,
+				A2962B201B2FAAC700AA96C2 /* MasterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +421,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A21185E31B2E3F93006E35B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2CBCCB51B2FC37700034EE0 /* InterfaceController.swift in Sources */,
+				A2CBCCAC1B2FB78200034EE0 /* TeamDetailRowController.swift in Sources */,
+				A2CBCCAF1B2FB7BE00034EE0 /* TeamsRowController.swift in Sources */,
+				A21185EF1B2E3F94006E35B3 /* NotificationController.swift in Sources */,
+				A2CBCCAB1B2FB78200034EE0 /* TeamDetailController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -237,21 +441,39 @@
 			target = A21185BB1B2E3ECE006E35B3 /* BaseballLine */;
 			targetProxy = A21185D41B2E3ED1006E35B3 /* PBXContainerItemProxy */;
 		};
+		A21185F71B2E3F94006E35B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A21185F31B2E3F94006E35B3 /* BaseballLine WatchKit App */;
+			targetProxy = A21185F61B2E3F94006E35B3 /* PBXContainerItemProxy */;
+		};
+		A21186011B2E3F94006E35B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A21185E61B2E3F93006E35B3 /* BaseballLine WatchKit Extension */;
+			targetProxy = A21186001B2E3F94006E35B3 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A21185C71B2E3ED0006E35B3 /* Main.storyboard */ = {
+		A21185FB1B2E3F94006E35B3 /* Interface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A21185C81B2E3ED0006E35B3 /* Base */,
+				A21185FC1B2E3F94006E35B3 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		A2CBCCA01B2FB1AA00034EE0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A2CBCCA11B2FB1AA00034EE0 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		A21185CC1B2E3ED1006E35B3 /* LaunchScreen.xib */ = {
+		A2CBCCA31B2FB1B200034EE0 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A21185CD1B2E3ED1006E35B3 /* Base */,
+				A2CBCCA41B2FB1B200034EE0 /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -344,6 +566,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BaseballLine/BaseballLine.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = BaseballLine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -354,6 +578,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BaseballLine/BaseballLine.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = BaseballLine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -394,6 +620,70 @@
 			};
 			name = Release;
 		};
+		A21186041B2E3F94006E35B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = BaseballLine_WatchKit_Extension;
+				INFOPLIST_FILE = "BaseballLine WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		A21186051B2E3F94006E35B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = BaseballLine_WatchKit_Extension;
+				INFOPLIST_FILE = "BaseballLine WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		A21186071B2E3F94006E35B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "BaseballLine WatchKit Extension/BaseballLine WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BaseballLine WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A21186081B2E3F94006E35B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "BaseballLine WatchKit Extension/BaseballLine WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "BaseballLine WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -413,6 +703,7 @@
 				A21185DF1B2E3ED1006E35B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A21185E01B2E3ED1006E35B3 /* Build configuration list for PBXNativeTarget "BaseballLineTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +712,25 @@
 				A21185E21B2E3ED1006E35B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A21186031B2E3F94006E35B3 /* Build configuration list for PBXNativeTarget "BaseballLine WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A21186041B2E3F94006E35B3 /* Debug */,
+				A21186051B2E3F94006E35B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A21186061B2E3F94006E35B3 /* Build configuration list for PBXNativeTarget "BaseballLine WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A21186071B2E3F94006E35B3 /* Debug */,
+				A21186081B2E3F94006E35B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
