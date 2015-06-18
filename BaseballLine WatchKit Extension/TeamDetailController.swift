@@ -21,6 +21,8 @@ class TeamDetailController: WKInterfaceController {
         
         // Configure interface objects here.
         self.teamDetail = (context as? [String:AnyObject])!
+        self.teamDetail.removeValueForKey("first_name")
+        self.teamDetail.removeValueForKey("last_name")
         loadTeams()
     }
     

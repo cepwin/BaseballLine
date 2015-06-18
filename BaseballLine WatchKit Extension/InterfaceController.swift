@@ -102,7 +102,8 @@ class InterfaceController: WKInterfaceController {
     }
     
     private func loadTeams() {
-        self.teamRowTable.setNumberOfRows(self.teams.count, withRowType: "TeamsRowController")
+        NSLog("number of rows \(self.teams.count)")
+        self.teamRowTable.setNumberOfRows(self.teams.count, withRowType:"TeamsRowController")
         for (index, team) in enumerate(self.teams) {
             let x = self.teamRowTable.numberOfRows
             let row = self.teamRowTable.rowControllerAtIndex(index) as! TeamsRowController

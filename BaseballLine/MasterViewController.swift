@@ -202,12 +202,12 @@ class MasterViewController: UITableViewController {
         let tabObj = self.tabBarController as! TabBarController
         tabObj.tableview = self
         self.defaults = NSUserDefaults(suiteName: "group.com.cepwin.BaseballLine")!
-        var teamIds1 : AnyObject? = self.defaults.objectForKey("teamIds")
-        var teams1 : AnyObject? = self.defaults.objectForKey("teamNames")
-        var teamsSM : AnyObject? = self.defaults.objectForKey("teamsSM")
-        var teamIdsSM : AnyObject? = self.defaults.objectForKey("teamIdsSM")
+        var teamIds1 : [String]? = (self.defaults.objectForKey("teamIds") as? [String])
+        var teams1 : [String]? = (self.defaults.objectForKey("teamNames") as? [String])
+        var teamsSM : [String]? = (self.defaults.objectForKey("teamsSM") as? [String])
+        var teamIdsSM : [String]? = (self.defaults.objectForKey("teamIdsSM") as? [String])
         if (teams1 != nil) {
-            tabObj.teams = teams1 as! [String]
+            tabObj.teams = teams1!
             //  self.teams.sort($0 > $1)
             tabObj.teams = sorted(tabObj.teams, <)
             self.teams = tabObj.teams
@@ -218,20 +218,20 @@ class MasterViewController: UITableViewController {
         }
         
         if(teamIds1   != nil) {
-            tabObj.teamIds = teamIds1 as! [String]
+            tabObj.teamIds = teamIds1!
             //self.teamIds.sort($0 > $1)
             tabObj.teamIds = sorted(tabObj.teamIds, <)
             // self.teamIds = tabObj.teamIds
         }
         if(teamIdsSM   != nil) {
-            tabObj.teamIdsSM = teamIdsSM as! [String]
+            tabObj.teamIdsSM = teamIdsSM!
             //self.teamIds.sort($0 > $1)
             tabObj.teamIdsSM = sorted(tabObj.teamIdsSM, <)
             // self.teamIdsSM = tabObj.teamIdsSM
             
         }
         if(teamsSM   != nil) {
-            tabObj.teamsSM = teamsSM as! [String]
+            tabObj.teamsSM = teamsSM!
             //self.teamIds.sort($0 > $1)
             tabObj.teamsSM = sorted(tabObj.teamsSM, <)
             // self.teamsSM = tabObj.teamsSM

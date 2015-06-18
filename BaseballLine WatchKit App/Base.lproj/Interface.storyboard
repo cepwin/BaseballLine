@@ -18,7 +18,7 @@
                         </button>
                         <table alignment="left" id="NLB-8d-Yao">
                             <items>
-                                <tableRow identifier="TeamsRowController" id="coE-qh-jh3" customClass="TeamsRowController" customModule="MLBLine_WatchKit_Extension">
+                                <tableRow identifier="TeamsRowController" id="coE-qh-jh3" customClass="TeamsRowController" customModule="BaseballLine_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="Rad-NJ-DiD">
                                         <items>
                                             <label width="1" height="20" alignment="left" text="Label" id="KDq-hz-abx"/>
@@ -47,7 +47,7 @@
                     <items>
                         <table alignment="left" id="9tb-dX-XrS">
                             <items>
-                                <tableRow identifier="TeamDetailRowController" id="wPP-Ln-1DG" customClass="TeamDetailRowController" customModule="MLBLine_WatchKit_Extension">
+                                <tableRow identifier="TeamDetailRowController" id="wPP-Ln-1DG" customClass="TeamDetailRowController" customModule="BaseballLine_WatchKit_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="Sp5-Lr-SD8">
                                         <items>
                                             <label width="1" height="1" alignment="left" text="Label" id="2hG-L4-uaI"/>
