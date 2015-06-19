@@ -238,8 +238,8 @@ class MasterViewController: UITableViewController {
             
         }
         //change here
-        sortTeams()
         getData()
+        sortTeams()
     }
     
     func sortTeams() {
