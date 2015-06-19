@@ -90,6 +90,7 @@ class MasterViewController: UITableViewController {
                 if(error == nil) {
                     let res1 = self.parsedObject.mutableArrayValueForKey("standing")
                     self.loadDataIntoObjs(res1)
+                    self.sortTeams()
                     self.teamsTable.reloadData()
                 }
             }
@@ -169,6 +170,8 @@ class MasterViewController: UITableViewController {
             println("Contents of res1 \(res1[i])")
         }
         self.loadTeams = false
+        tabObj.teams = sorted(tabObj.teams, <)
+        tabObj.teamIds = sorted(tabObj.teamIds, <)
         self.defaults.setObject(tabObj.teams, forKey: "teamNames")
         self.defaults.synchronize()
         
@@ -239,8 +242,7 @@ class MasterViewController: UITableViewController {
         }
         //change here
         getData()
-        sortTeams()
-    }
+       }
     
     func sortTeams() {
         let tabObj = self.tabBarController as! TabBarController
