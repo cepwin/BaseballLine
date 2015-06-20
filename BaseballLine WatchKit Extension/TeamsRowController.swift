@@ -10,5 +10,6 @@ import WatchKit
 
 class TeamsRowController: NSObject {
 
+    @IBOutlet weak var teamLabel2: WKInterfaceLabel!
     @IBOutlet weak var teamLabel: WKInterfaceLabel!
 }

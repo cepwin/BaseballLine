@@ -128,7 +128,7 @@ class ConfigViewController: UIViewController,ConfigTableViewCellDelegate {
         let tabObj = self.tabBarController as! TabBarController
         var stat = teams[indexPath.item] as String
         var id = tabObj.teamIds[indexPath.item] as String
-        stat = stat.stringByReplacingOccurrencesOfString("_", withString: " ", options: NSStringCompareOptions.CaseInsensitiveSearch)
+        stat = stat.stringByReplacingOccurrencesOfString("|", withString: " ", options: NSStringCompareOptions.CaseInsensitiveSearch)
         stat = stat.uppercaseString
         cell.teamLabel?.text = stat  as String
         cell.teamId.text = id as String

@@ -107,7 +107,9 @@ class InterfaceController: WKInterfaceController {
         for (index, team) in enumerate(self.teams) {
             let x = self.teamRowTable.numberOfRows
             let row = self.teamRowTable.rowControllerAtIndex(index) as! TeamsRowController
-            row.teamLabel.setText(team)
+            let teamLines = split(team) {$0 == "|"}
+            row.teamLabel.setText(teamLines[0])
+            row.teamLabel2.setText(teamLines[1])
         }
         
     }

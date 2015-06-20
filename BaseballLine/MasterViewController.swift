@@ -163,7 +163,7 @@ class MasterViewController: UITableViewController {
             self.teamDict2.updateValue(indu as Dictionary, forKey: resfst.valueForKey("team_id") as! String)
             
             if(self.loadTeams) {
-                tabObj.teams.append("\(first_name) \(last_name)")
+                tabObj.teams.append("\(first_name)|\(last_name)")
                 tabObj.teamIds.append(resfst.valueForKey("team_id") as! String)
                 
             }
@@ -309,8 +309,9 @@ class MasterViewController: UITableViewController {
     
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
         //let tabObj = self.tabBarController as! TabBarController
-        
-        cell.textLabel!.text = self.teams[indexPath.item] as NSString as String
+        let rowStr = self.teams[indexPath.item].stringByReplacingOccurrencesOfString("|", withString: " ", options: NSStringCompareOptions.CaseInsensitiveSearch)
+
+        cell.textLabel!.text = rowStr as NSString as String
         
     }
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

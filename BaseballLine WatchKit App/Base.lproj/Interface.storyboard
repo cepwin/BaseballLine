@@ -19,13 +19,19 @@
                         <table alignment="left" id="NLB-8d-Yao">
                             <items>
                                 <tableRow identifier="TeamsRowController" id="coE-qh-jh3" customClass="TeamsRowController" customModule="BaseballLine_WatchKit_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="Rad-NJ-DiD">
+                                    <group key="rootItem" width="1" alignment="left" layout="vertical" id="Rad-NJ-DiD">
                                         <items>
-                                            <label width="1" height="20" alignment="left" text="Label" id="KDq-hz-abx"/>
+                                            <label width="1" height="0.29999999999999999" alignment="left" text="Label" id="KDq-hz-abx">
+                                                <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                            </label>
+                                            <label width="1" height="0.69999999999999996" alignment="left" verticalAlignment="bottom" text="Label" id="Ygj-0Q-h90" userLabel="Label1">
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            </label>
                                         </items>
                                     </group>
                                     <connections>
                                         <outlet property="teamLabel" destination="KDq-hz-abx" id="d8E-Nf-cpv"/>
+                                        <outlet property="teamLabel2" destination="Ygj-0Q-h90" id="YLG-1E-wpi"/>
                                         <segue destination="Pj0-sA-d9B" kind="modal" id="nT9-cM-A1J"/>
                                     </connections>
                                 </tableRow>
