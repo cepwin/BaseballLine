@@ -256,7 +256,7 @@ class MasterViewController: UITableViewController {
                 self.teamIds = self.teamIds.filter{!contains([self.teamIdsSM[k]], $0)}
                 self.teamIds.insert(self.teamIdsSM[k], atIndex: k)
                 
-                self.teams.filter{!contains([self.teamsSM[k]], $0)}
+                self.teams = self.teams.filter{!contains([self.teamsSM[k]], $0)}
                 self.teams.insert(self.teamsSM[k], atIndex: k)
                 
             }
