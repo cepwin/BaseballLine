@@ -24,7 +24,7 @@
         <!--Configuration-->
         <scene sceneID="sAG-g5-WmD">
             <objects>
-                <viewController title="Configuration" id="Tvf-iY-pm3" customClass="ConfigViewController" customModule="MLBLine" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Configuration" id="Tvf-iY-pm3" customClass="ConfigViewController" customModule="BaseballLine" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="84B-fq-dCT"/>
                         <viewControllerLayoutGuide type="bottom" id="hAi-XW-cgQ"/>
@@ -46,7 +46,7 @@
                                 <rect key="frame" x="0.0" y="61" width="600" height="493"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="confCell" id="SNh-He-rMU" customClass="ConfigTableViewCell" customModule="MLBLine" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="confCell" id="SNh-He-rMU" customClass="ConfigTableViewCell" customModule="BaseballLine" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SNh-He-rMU" id="h7X-QR-qwZ">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -116,7 +116,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="ROX-vH-BwD">
             <objects>
-                <tabBarController id="AZw-oA-r5h" customClass="TabBarController" customModule="MLBLine" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="AZw-oA-r5h" customClass="TabBarController" customModule="BaseballLine" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Agd-HR-10O">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -135,7 +135,7 @@
         <!--Master-->
         <scene sceneID="VgW-fR-Quf">
             <objects>
-                <tableViewController title="Master" id="pGg-6v-bdr" customClass="MasterViewController" customModule="MLBLine" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Master" id="pGg-6v-bdr" customClass="MasterViewController" customModule="BaseballLine" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mLL-gJ-YKr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -157,7 +157,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.96043028084068538" green="0.98474984217171713" blue="0.0073913381108930308" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.83772945546174959" green="0.88969087802090474" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="Ah7-4n-0Wa" kind="show" identifier="showDetail" id="jUr-3t-vfg"/>
                                 </connections>
@@ -198,7 +198,7 @@
         <!--Detail-->
         <scene sceneID="Cn3-H9-jdl">
             <objects>
-                <viewController title="Detail" id="Ah7-4n-0Wa" customClass="DetailViewController" customModule="MLBLine" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Detail" id="Ah7-4n-0Wa" customClass="DetailViewController" customModule="BaseballLine" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cIm-e0-J51"/>
                         <viewControllerLayoutGuide type="bottom" id="a0L-h9-sNL"/>
@@ -218,14 +218,13 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQw-XH-AaU">
                                                     <rect key="frame" x="36" y="4" width="556" height="35"/>
-                                                    <color key="backgroundColor" red="0.71599433059999995" green="0.80043936230000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.8377294555" green="0.88969087800000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.98700210714024883" green="1" blue="0.1365977240266707" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="0.71539531599999995" blue="0.5104467037" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.71599433059999995" green="0.80043936230000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.8377294555" green="0.88969087800000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
