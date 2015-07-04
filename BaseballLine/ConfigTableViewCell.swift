@@ -36,17 +36,7 @@ class ConfigTableViewCell: UITableViewCell {
     
 
    @IBAction func changeSwitch(sender: AnyObject) {
-    //let tableView:UITableView = sender.superview as! UITableView
-        NSLog("tag selected \(sender.tag)")
-       // let tableView = self.superview?
-        //let ip = tableView?.indexPathForCell(self)
-        //let ip = self.superview?.superview.indexPathForCell(self)
-       // let ip:NSIndexPath = NSIndexPath(index: sender.tag)
-       // let row:Int = ip!.row
-        //let tableView = self.superview?.superview
-        //let labelId = self.teamId as UILabel
-        //let idStr:String = labelId.text!
-       // let controller = self.delegate?.returnController()
+         NSLog("tag selected \(sender.tag)")
         if(switchImp.on == true) {
             self.setting = true
         } else {

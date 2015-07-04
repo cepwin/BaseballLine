@@ -9,25 +9,30 @@
 import UIKit
 
 class MasterViewController: UITableViewController {
+    
+    typealias TeamTuple = (teamName : String, teamId : String, teamDivRank : String)
+
 
     var objects = [AnyObject]()
 
     
-    // var teamData:MLBTeamObject = MLBTeamObject()
+ 
     var teamDictSM:[String:[String:AnyObject]] = [String:[String:AnyObject]]()
     
     var teamDict2:[String:[String:AnyObject]] = [String:[String:AnyObject]]()
     
-    //var teamDictionary = [String : MLBTeamObject]()
     
-    var teamIds:[String] = [String]()
-    var teams:[String] = [String]()
+   // var teamIds:[String] = [String]()
+  //  var teams:[String] = [String]()
     
     var teamIdsSM:[String] = [String]()
     var teamsSM:[String] = [String]()
     
-    
-    
+    //var teamT: [String:String] = [String:String]()
+    var teamT : [(key : String, value : String)] = []
+
+    let confDiv : [String: Int] = ["NLE" : 1, "NLC" : 2, "NLW" : 3, "ALE" : 4, "ALC" : 5, "ALW" : 6]
+
     
     @IBOutlet var teamsTable: UITableView!
     
@@ -63,7 +68,7 @@ class MasterViewController: UITableViewController {
         let bundle = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
         var userAgent = "BaseballLine/\(bundle)(cepwin@gmail.com)"
         request.setValue(userAgent, forHTTPHeaderField: "User-Agent")
-        if tabObj.teams.count > 0 {
+        if tabObj.teamHandler.count > 0 {
             loadTeams = false
         }
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
@@ -163,22 +168,32 @@ class MasterViewController: UITableViewController {
             self.teamDict2.updateValue(indu as Dictionary, forKey: resfst.valueForKey("team_id") as! String)
             
             if(self.loadTeams) {
+                let name = "\(first_name)|\(last_name)"
+                let id = resfst.valueForKey("team_id") as! String
+                let conf = (resfst.valueForKey("conference")! as! String)
+                let div = (resfst.valueForKey("division") as! String)
+                let rank: NSInteger = resfst.valueForKey("rank") as! NSInteger
+                let sort1 = self.confDiv[conf+div]!
+                let sort : NSString = "\(sort1)\(rank)"
                 tabObj.teams.append("\(first_name)|\(last_name)")
                 tabObj.teamIds.append(resfst.valueForKey("team_id") as! String)
-                
+                tabObj.teamHandler.updateValue(sort as! String, forKey: "\(first_name)|\(last_name);\(id)")
+
             }
             println("Contents of res1 \(res1[i])")
         }
         self.loadTeams = false
         tabObj.teams = sorted(tabObj.teams, <)
-        tabObj.teamIds = sorted(tabObj.teamIds, <)
-        self.defaults.setObject(tabObj.teams, forKey: "teamNames")
-        self.defaults.synchronize()
+         tabObj.teamIds = sorted(tabObj.teamIds, <)
+        self.teamT = Array(tabObj.teamHandler).sorted({$0.0 < $1.0})
+        
+    //    self.defaults.setObject(tabObj.teams, forKey: "teamNames")
+     //   self.defaults.synchronize()
         
         
-        self.defaults.setObject(tabObj.teamIds, forKey: "teamIds")
+    //    self.defaults.setObject(tabObj.teamIds, forKey: "teamIds")
         
-        self.defaults.synchronize()
+   //     self.defaults.synchronize()
         
         self.defaults.setObject(tabObj.teamIdsSM, forKey: "teamIdsSM")
         
@@ -189,7 +204,10 @@ class MasterViewController: UITableViewController {
         
         self.defaults.synchronize()
         
+        self.defaults.setObject(tabObj.teamHandler, forKey: "teamDictionary")
         
+        self.defaults.synchronize()
+
         
     }
 
@@ -209,15 +227,20 @@ class MasterViewController: UITableViewController {
         var teams1 : [String]? = (self.defaults.objectForKey("teamNames") as? [String])
         var teamsSM : [String]? = (self.defaults.objectForKey("teamsSM") as? [String])
         var teamIdsSM : [String]? = (self.defaults.objectForKey("teamIdsSM") as? [String])
-        if (teams1 != nil) {
+        var teamTup :  [String:String]? =  (self.defaults.objectForKey("teamDictionary") as? [String : String])
+        if(teamTup != nil) {
+            tabObj.teamHandler = teamTup!
+           self.teamT =  Array(tabObj.teamHandler).sorted({$0.0 < $1.0})
+            self.loadTeams = false
+
+        }else {
+            self.loadTeams = true
+        }
+    /*   if (teams1 != nil) {
             tabObj.teams = teams1!
             //  self.teams.sort($0 > $1)
             tabObj.teams = sorted(tabObj.teams, <)
             self.teams = tabObj.teams
-            self.loadTeams = false
-            
-        } else {
-            self.loadTeams = true
         }
         
         if(teamIds1   != nil) {
@@ -225,7 +248,7 @@ class MasterViewController: UITableViewController {
             //self.teamIds.sort($0 > $1)
             tabObj.teamIds = sorted(tabObj.teamIds, <)
             // self.teamIds = tabObj.teamIds
-        }
+        }*/
         if(teamIdsSM   != nil) {
             tabObj.teamIdsSM = teamIdsSM!
             //self.teamIds.sort($0 > $1)
@@ -247,17 +270,23 @@ class MasterViewController: UITableViewController {
     func sortTeams() {
         let tabObj = self.tabBarController as! TabBarController
         self.teamsSM = tabObj.teamsSM
-        self.teams = tabObj.teams
+//        self.teams = tabObj.teams
         self.teamIdsSM = tabObj.teamIdsSM
-        self.teamIds = tabObj.teamIds
-        
+ //       self.teamIds = tabObj.teamIds
+        self.teamT = Array(tabObj.teamHandler).sorted({$0.0 < $1.0})
         if self.teamIdsSM.count > 0 {
             for k in 0...(self.teamIdsSM.count-1){
-                self.teamIds = self.teamIds.filter{!contains([self.teamIdsSM[k]], $0)}
-                self.teamIds.insert(self.teamIdsSM[k], atIndex: k)
+ //               self.teamIds = self.teamIds.filter{!contains([self.teamIdsSM[k]], $0)}
+ //               self.teamIds.insert(self.teamIdsSM[k], atIndex: k)
                 
-                self.teams = self.teams.filter{!contains([self.teamsSM[k]], $0)}
-                self.teams.insert(self.teamsSM[k], atIndex: k)
+//                self.teams = self.teams.filter{!contains([self.teamsSM[k]], $0)}
+//                self.teams.insert(self.teamsSM[k], atIndex: k)
+                var filterStr = "\(self.teamsSM[k]);\(self.teamIdsSM[k])"
+                //  filterStr = filterStr.stringByReplacingOccurrencesOfString("-", withString: " ", options: ////NSStringCompareOptions.CaseInsensitiveSearch)
+                var saveItem = teamT.filter({$0.key == filterStr})
+                self.teamT = teamT.filter({$0.key != filterStr})
+                self.teamT.insert(saveItem[0], atIndex: k)
+
                 
             }
         }
@@ -283,13 +312,19 @@ class MasterViewController: UITableViewController {
         
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let key = self.teamIds[indexPath.item] as String
+                let key = nameToId(self.teamT[indexPath.item].key as String)
                 let object:[String:AnyObject] = self.teamDict2[key]!
                 var keys:Array<String>  = Array(object.keys) as Array<String>
                 (segue.destinationViewController as! DetailViewController).detailItem = object
             }
         }
     }
+    
+    func nameToId(name : String) ->String {
+        var id = split(name) {$0 == ";"}[1]
+         return id
+    }
+    
     // MARK: - Table View
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -308,12 +343,17 @@ class MasterViewController: UITableViewController {
     }
     
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
-        //let tabObj = self.tabBarController as! TabBarController
-        let rowStr = self.teams[indexPath.item].stringByReplacingOccurrencesOfString("|", withString: " ", options: NSStringCompareOptions.CaseInsensitiveSearch)
+//        let tabObj = self.tabBarController as! TabBarController
+//         let rowStr1 = self.teams[indexPath.item].stringByReplacingOccurrencesOfString("|", withString: " ", options:    NSStr
+   // ingCompareOptions.CaseInsensitiveSearch)
+        if(self.teamT.count > 0) {
+            var teamPair = split(teamT[indexPath.item].key) {$0 == ";"}[0]
+            let rowStr = teamPair.stringByReplacingOccurrencesOfString("|", withString: " ", options: NSStringCompareOptions.CaseInsensitiveSearch)
 
-        cell.textLabel!.text = rowStr as NSString as String
-        
+            cell.textLabel!.text = rowStr as NSString as String
+        }
     }
+    
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true

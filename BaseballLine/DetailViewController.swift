@@ -66,7 +66,7 @@ class DetailViewController: UIViewController {
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
         // let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
         // cell.textLabel!.text = object.valueForKey("timeStamp")!.description
-             var stat = teams[indexPath.item] as String
+        var stat = teams[indexPath.item] as String
         stat = stat.stringByReplacingOccurrencesOfString("_", withString: " ", options: NSStringCompareOptions.CaseInsensitiveSearch)
         stat = stat.uppercaseString
         var text1 = "\(stat): \(detailItem[teams[indexPath.item]]!)"

@@ -17,13 +17,15 @@ class ConfigViewController: UIViewController,ConfigTableViewCellDelegate {
     @IBOutlet weak var configLable: UITextField!
     
     var configureOptions = ["Select Teams", "Select Data to View"]
-    var managedObjectContext: NSManagedObjectContext? = nil
-    var teams : [String] = []
-    var teamsIds : [String] = []
+   // var managedObjectContext: NSManagedObjectContext? = nil
+    //var teams : [String] = []
+   // var teamsIds : [String] = []
     var teamSm : [String] = []
     var teamIdsSM : [String] = []
     var settings : [Bool] = []
     
+    var teamT : [(key : String, value : String)] = []
+
     var defaults : NSUserDefaults = NSUserDefaults()
 
     //implements the table cell delegate
@@ -32,15 +34,16 @@ class ConfigViewController: UIViewController,ConfigTableViewCellDelegate {
     }
     
     func setList(setting:Bool, row:Int) {
+        var team = split(self.teamT[row].key) {$0 == ";"}
         if(setting) {
-            NSLog("id \(self.teamsIds[row]) row \(row)")
-            self.teamIdsSM.append(self.teamsIds[row])
-            self.teamSm.append(self.teams[row])
+            NSLog("id \(team[1]) row \(row)")
+            self.teamIdsSM.append(team[1])
+            self.teamSm.append(team[0])
 
         }
         else {
-            self.teamIdsSM = self.teamIdsSM.filter{!contains([self.teamsIds[row]], $0)}
-            self.teamSm = self.teamSm.filter{!contains([self.teams[row]], $0)}
+            self.teamIdsSM = self.teamIdsSM.filter{!contains([team[1]], $0)}
+            self.teamSm = self.teamSm.filter{!contains([team[0]], $0)}
     
         }
         let tabObj = self.tabBarController as! TabBarController
@@ -57,11 +60,12 @@ class ConfigViewController: UIViewController,ConfigTableViewCellDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         let tabObj = self.tabBarController as! TabBarController
-        self.teamsIds = tabObj.teamIds
-        self.teams = tabObj.teams
+      //  self.teamsIds = tabObj.teamIds
+      //  self.teams = tabObj.teams
         self.teamSm = tabObj.teamsSM
         self.teamIdsSM = tabObj.teamIdsSM
-        self.settings = [Bool](count: self.teams.count, repeatedValue:false)
+        self.teamT = Array(tabObj.teamHandler).sorted({$0.0 < $1.0})
+        self.settings = [Bool](count: self.teamT.count, repeatedValue:false)
         tableView.reloadData()
         
     }
@@ -104,7 +108,7 @@ class ConfigViewController: UIViewController,ConfigTableViewCellDelegate {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // let sectionInfo = self.fetchedResultsController.sections![section] as NSFetchedResultsSectionInfo
         // return sectionInfo.numberOfObjects
-        return self.teams.count
+        return self.teamT.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -126,12 +130,14 @@ class ConfigViewController: UIViewController,ConfigTableViewCellDelegate {
         //let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
         // cell.textLabel!.text = object.valueForKey("timeStamp")!.description
         let tabObj = self.tabBarController as! TabBarController
-        var stat = teams[indexPath.item] as String
+        var stat  = split(teamT[indexPath.item].key) {$0 == ";"}
         var id = tabObj.teamIds[indexPath.item] as String
-        stat = stat.stringByReplacingOccurrencesOfString("|", withString: " ", options: NSStringCompareOptions.CaseInsensitiveSearch)
-        stat = stat.uppercaseString
-        cell.teamLabel?.text = stat  as String
-        cell.teamId.text = id as String
+        var rowStr = stat[0].stringByReplacingOccurrencesOfString("|", withString: " ", options: NSStringCompareOptions.CaseInsensitiveSearch).uppercaseString
+        var temp = stat[1].stringByReplacingOccurrencesOfString(" ", withString: "-", options: NSStringCompareOptions.CaseInsensitiveSearch)
+        temp = temp.lowercaseString
+
+        cell.teamLabel?.text = rowStr  as String
+        cell.teamId.text = temp as String
         cell.switchImp.tag = indexPath.row
         NSLog("Cell tag \(cell.switchImp.tag)")
         let itm = indexPath.item
