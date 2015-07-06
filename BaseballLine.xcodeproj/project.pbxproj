@@ -27,6 +27,7 @@
 		A2CBCCAC1B2FB78200034EE0 /* TeamDetailRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CBCCA91B2FB78200034EE0 /* TeamDetailRowController.swift */; };
 		A2CBCCAF1B2FB7BE00034EE0 /* TeamsRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CBCCAE1B2FB7BE00034EE0 /* TeamsRowController.swift */; };
 		A2CBCCB51B2FC37700034EE0 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CBCCB21B2FBEF100034EE0 /* InterfaceController.swift */; };
+		A2F7454F1B49960F000B5151 /* ConfigChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7454E1B49960F000B5151 /* ConfigChoiceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		A2CBCCA91B2FB78200034EE0 /* TeamDetailRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamDetailRowController.swift; sourceTree = "<group>"; };
 		A2CBCCAE1B2FB7BE00034EE0 /* TeamsRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamsRowController.swift; sourceTree = "<group>"; };
 		A2CBCCB21B2FBEF100034EE0 /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		A2F7454E1B49960F000B5151 /* ConfigChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigChoiceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				A2962B241B2FABF500AA96C2 /* ConfigTableViewCell.swift */,
 				A2962B1E1B2FAAC700AA96C2 /* MasterViewController.swift */,
 				A2962B221B2FABCC00AA96C2 /* ConfigViewController.swift */,
+				A2F7454E1B49960F000B5151 /* ConfigChoiceViewController.swift */,
 				A2962B1F1B2FAAC700AA96C2 /* TabBarController.swift */,
 				A21185C11B2E3ECF006E35B3 /* AppDelegate.swift */,
 				A21185C51B2E3ED0006E35B3 /* DetailViewController.swift */,
@@ -409,6 +412,7 @@
 				A2962B211B2FAAC700AA96C2 /* TabBarController.swift in Sources */,
 				A21185C21B2E3ECF006E35B3 /* AppDelegate.swift in Sources */,
 				A2962B251B2FABF500AA96C2 /* ConfigTableViewCell.swift in Sources */,
+				A2F7454F1B49960F000B5151 /* ConfigChoiceViewController.swift in Sources */,
 				A2962B231B2FABCC00AA96C2 /* ConfigViewController.swift in Sources */,
 				A2962B201B2FAAC700AA96C2 /* MasterViewController.swift in Sources */,
 			);

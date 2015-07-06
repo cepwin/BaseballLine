@@ -9,6 +9,11 @@
 import UIKit
 import CoreData
 
+
+protocol ConfigViewControllerDelegate {
+    func returnTabBarController()->TabBarController
+}
+
 class ConfigViewController: UIViewController,ConfigTableViewCellDelegate {
     
     @IBOutlet weak var tableView: UITableView!
@@ -28,6 +33,8 @@ class ConfigViewController: UIViewController,ConfigTableViewCellDelegate {
 
     var defaults : NSUserDefaults = NSUserDefaults()
 
+    var delegate : ConfigChoiceViewController? = nil
+    
     //implements the table cell delegate
     func returnController() -> ConfigViewController {
         return self
@@ -46,7 +53,7 @@ class ConfigViewController: UIViewController,ConfigTableViewCellDelegate {
             self.teamSm = self.teamSm.filter{!contains([team[0]], $0)}
     
         }
-        let tabObj = self.tabBarController as! TabBarController
+        let tabObj = delegate!.returnTabBarController()
         tabObj.teamIdsSM = self.teamIdsSM
         tabObj.teamsSM = self.teamSm
     }
@@ -59,9 +66,7 @@ class ConfigViewController: UIViewController,ConfigTableViewCellDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tabObj = self.tabBarController as! TabBarController
-      //  self.teamsIds = tabObj.teamIds
-      //  self.teams = tabObj.teams
+        let tabObj = delegate!.returnTabBarController()
         self.teamSm = tabObj.teamsSM
         self.teamIdsSM = tabObj.teamIdsSM
         self.teamT = Array(tabObj.teamHandler).sorted({$0.0 < $1.0})
@@ -71,7 +76,7 @@ class ConfigViewController: UIViewController,ConfigTableViewCellDelegate {
     }
     
     @IBAction func SaveConfig(sender: AnyObject) {
-        let tabObj = self.tabBarController as! TabBarController
+         let tabObj = delegate!.returnTabBarController()
         if tabObj.teamIdsSM.count > 3 {
             let alert = UIAlertView()
             alert.title = "Favorites"
@@ -129,9 +134,9 @@ class ConfigViewController: UIViewController,ConfigTableViewCellDelegate {
     func configureCell(cell: ConfigTableViewCell, atIndexPath indexPath: NSIndexPath) {
         //let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
         // cell.textLabel!.text = object.valueForKey("timeStamp")!.description
-        let tabObj = self.tabBarController as! TabBarController
+        let tabObj = delegate!.returnTabBarController()
         var stat  = split(teamT[indexPath.item].key) {$0 == ";"}
-        var id = tabObj.teamIds[indexPath.item] as String
+       // var id = tabObj.teamIds[indexPath.item] as String
         var rowStr = stat[0].stringByReplacingOccurrencesOfString("|", withString: " ", options: NSStringCompareOptions.CaseInsensitiveSearch).uppercaseString
         var temp = stat[1].stringByReplacingOccurrencesOfString(" ", withString: "-", options: NSStringCompareOptions.CaseInsensitiveSearch)
         temp = temp.lowercaseString
@@ -141,8 +146,9 @@ class ConfigViewController: UIViewController,ConfigTableViewCellDelegate {
         cell.switchImp.tag = indexPath.row
         NSLog("Cell tag \(cell.switchImp.tag)")
         let itm = indexPath.item
-        if(contains(tabObj.teamIdsSM,tabObj.teamIds[indexPath.item] )) {
-            NSLog(tabObj.teamIds[indexPath.item])
+        let id = split(teamT[indexPath.item].key) {$0 == ";"}
+        if(contains(tabObj.teamIdsSM,id[1])) {
+        //    NSLog(tabObj.teamIds[indexPath.item])
             cell.switchImp.on = true
             self.settings[indexPath.item] = true
         } else {

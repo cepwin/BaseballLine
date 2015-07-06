@@ -185,7 +185,7 @@ class MasterViewController: UITableViewController {
         self.loadTeams = false
         tabObj.teams = sorted(tabObj.teams, <)
          tabObj.teamIds = sorted(tabObj.teamIds, <)
-        self.teamT = Array(tabObj.teamHandler).sorted({$0.0 < $1.0})
+        self.teamT = Array(tabObj.teamHandler).sorted({$0.1 < $1.1})
         
     //    self.defaults.setObject(tabObj.teams, forKey: "teamNames")
      //   self.defaults.synchronize()
@@ -230,7 +230,7 @@ class MasterViewController: UITableViewController {
         var teamTup :  [String:String]? =  (self.defaults.objectForKey("teamDictionary") as? [String : String])
         if(teamTup != nil) {
             tabObj.teamHandler = teamTup!
-           self.teamT =  Array(tabObj.teamHandler).sorted({$0.0 < $1.0})
+           self.teamT =  Array(tabObj.teamHandler).sorted({$0.1 < $1.1})
             self.loadTeams = false
 
         }else {
@@ -273,7 +273,7 @@ class MasterViewController: UITableViewController {
 //        self.teams = tabObj.teams
         self.teamIdsSM = tabObj.teamIdsSM
  //       self.teamIds = tabObj.teamIds
-        self.teamT = Array(tabObj.teamHandler).sorted({$0.0 < $1.0})
+        self.teamT = Array(tabObj.teamHandler).sorted({$0.1 < $1.1})
         if self.teamIdsSM.count > 0 {
             for k in 0...(self.teamIdsSM.count-1){
  //               self.teamIds = self.teamIds.filter{!contains([self.teamIdsSM[k]], $0)}
@@ -333,7 +333,7 @@ class MasterViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let tabObj = self.tabBarController as! TabBarController
-        return tabObj.teams.count
+        return tabObj.teamHandler.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

@@ -25,7 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabBarController = self.window!.rootViewController as! TabBarController
         let navigationController = tabBarController.viewControllers?[0] as! UINavigationController
         self.controller = navigationController.topViewController as! MasterViewController
-        let configController = tabBarController.viewControllers?[1]as! ConfigViewController
+        let configParent = tabBarController.viewControllers?[1] as! UINavigationController
+        let configMenu = configParent.topViewController as! ConfigChoiceViewController
+      //  let configController = configMenu.
+      //      childViewControllers[0] as! ConfigViewController
+            
+       //     childViewControllers[0] as! ConfigViewController
         return true
     }
     
