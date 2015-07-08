@@ -53,24 +53,33 @@
                                             <segue destination="Tvf-iY-pm3" kind="show" identifier="showFavorites" id="JKk-jG-zPm"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="M8X-kT-fsD">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="M8X-kT-fsD">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M8X-kT-fsD" id="oiL-lQ-O6a">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kta-wW-Psz">
-                                                    <rect key="frame" x="16" y="12" width="123" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="123" id="FjS-vi-upV"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="15" y="11" width="56" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FiT-67-hnM">
+                                                    <rect key="frame" x="322" y="7" width="227" height="29"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="227" id="rpd-3X-IOA"/>
+                                                    </constraints>
+                                                    <segments>
+                                                        <segment title="Alphabetical"/>
+                                                        <segment title="Standings"/>
+                                                    </segments>
+                                                </segmentedControl>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Kta-wW-Psz" firstAttribute="leading" secondItem="oiL-lQ-O6a" secondAttribute="leadingMargin" constant="8" id="12d-ZG-WOK"/>
-                                                <constraint firstItem="Kta-wW-Psz" firstAttribute="centerY" secondItem="oiL-lQ-O6a" secondAttribute="centerY" constant="1" id="Q0y-Lk-WdW"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="FiT-67-hnM" secondAttribute="trailing" constant="43" id="90n-8t-1br"/>
+                                                <constraint firstItem="Kta-wW-Psz" firstAttribute="leading" secondItem="oiL-lQ-O6a" secondAttribute="leadingMargin" constant="7" id="LSK-Wv-Bb1"/>
+                                                <constraint firstItem="Kta-wW-Psz" firstAttribute="centerY" secondItem="FiT-67-hnM" secondAttribute="centerY" id="ZIY-Eo-ZKW"/>
+                                                <constraint firstItem="Kta-wW-Psz" firstAttribute="centerY" secondItem="oiL-lQ-O6a" secondAttribute="centerY" id="bjf-ca-5Fv"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

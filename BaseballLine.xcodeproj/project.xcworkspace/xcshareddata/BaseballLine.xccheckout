@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FD43D0D9-F3B2-45CD-9E1F-343F3864E167</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BaseballLine</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EF7A62F698E70307AEAD71608ACC57E9EF813540</key>
+		<string>https://github.com/cepwin/BaseballLine</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BaseballLine.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EF7A62F698E70307AEAD71608ACC57E9EF813540</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/cepwin/BaseballLine</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EF7A62F698E70307AEAD71608ACC57E9EF813540</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EF7A62F698E70307AEAD71608ACC57E9EF813540</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BaseballLine</string>
+		</dict>
+	</array>
+</dict>
+</plist>
