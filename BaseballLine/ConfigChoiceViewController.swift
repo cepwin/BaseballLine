@@ -9,14 +9,35 @@
 import UIKit
 
 class ConfigChoiceViewController: UITableViewController, ConfigViewControllerDelegate {
+    @IBOutlet weak var sortChoice: UISegmentedControl!
+    var configVewController : ConfigViewController = ConfigViewController()
+    
+    @IBAction func Save(sender: AnyObject) {
+        self.configVewController.delegate = self
+        self.configVewController.SaveConfig(sender)
+        let defaults = NSUserDefaults(suiteName: "group.com.cepwin.BaseballLine")!
+        let tabObj = self.tabBarController as! TabBarController
 
-       
+        defaults.setObject(tabObj.sortOrder, forKey: "sortOrder")
+        
+        defaults.synchronize()
+
+    }
+    
+    @IBAction func selectSort(sender: AnyObject) {
+        let tabObj = self.tabBarController as! TabBarController
+        tabObj.sortOrder = sortChoice.selectedSegmentIndex
+    }
+
+    
     func returnTabBarController()->TabBarController {
         return self.tabBarController as! TabBarController
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tabObj = self.tabBarController as! TabBarController
+        sortChoice.selectedSegmentIndex = tabObj.sortOrder
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -97,6 +118,7 @@ class ConfigChoiceViewController: UITableViewController, ConfigViewControllerDel
         if(vc.title == "Configuration") {
             let conf = vc as! ConfigViewController
             conf.delegate = self
+            self.configVewController = conf
         }
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.

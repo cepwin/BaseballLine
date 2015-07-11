@@ -73,6 +73,9 @@
                                                         <segment title="Alphabetical"/>
                                                         <segment title="Standings"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="selectSort:" destination="WJL-3y-thw" eventType="valueChanged" id="XlU-06-vwh"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>
@@ -91,7 +94,16 @@
                             <outlet property="delegate" destination="WJL-3y-thw" id="Nl0-nZ-k2z"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="42U-Md-YMz"/>
+                    <navigationItem key="navigationItem" id="42U-Md-YMz">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="VRZ-cw-0Ha">
+                            <connections>
+                                <action selector="Save:" destination="WJL-3y-thw" id="zcW-2J-yNX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="sortChoice" destination="FiT-67-hnM" id="GZa-gj-uus"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xB7-jA-obr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -233,7 +245,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.83772945546174959" green="0.88969087802090474" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.71599433059999995" green="0.80043936230000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="Ah7-4n-0Wa" kind="show" identifier="showDetail" id="jUr-3t-vfg"/>
                                 </connections>

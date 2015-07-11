@@ -65,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 var userAgent = "BaseballLine/\(bundle)(cepwin@gmail.com)"
                 request.setValue(userAgent, forHTTPHeaderField: "User-Agent")
                 var loadTeams = false
-                if tabBarController.teams.count == 0 {
+                if tabBarController.teamHandler.count == 0 {
                     loadTeams = true
                 }
                 NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in

@@ -10,8 +10,8 @@ import UIKit
 
 class TabBarController: UITabBarController {
 
-    var teams : [String] = []
-    var teamIds : [String] = []
+  //  var teams : [String] = []
+ //   var teamIds : [String] = []
     
     var teamsSM : [String] = []
     var teamIdsSM : [String] = []
@@ -22,7 +22,7 @@ class TabBarController: UITabBarController {
     
     var teamHandler : [String:String] = [String: String]()
 
-    
+    var sortOrder : Int = 0
     
    
 }
