@@ -90,7 +90,7 @@ class InterfaceController: WKInterfaceController {
                     self.errorState = true
                 }
             } else {
-                self.userButton.setTitle("Error getting Data")
+                self.userButton.setTitle("App Starting Try again")
                 self.errorState = true
             }
             if(!self.errorState) {

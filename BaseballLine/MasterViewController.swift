@@ -22,13 +22,10 @@ class MasterViewController: UITableViewController {
     var teamDict2:[String:[String:AnyObject]] = [String:[String:AnyObject]]()
     
     
-   // var teamIds:[String] = [String]()
-  //  var teams:[String] = [String]()
     
     var teamIdsSM:[String] = [String]()
     var teamsSM:[String] = [String]()
     
-    //var teamT: [String:String] = [String:String]()
     var teamT : [(key : String, value : String)] = []
 
     let confDiv : [String: Int] = ["NLE" : 1, "NLC" : 2, "NLW" : 3, "ALE" : 4, "ALC" : 5, "ALW" : 6]
@@ -42,7 +39,6 @@ class MasterViewController: UITableViewController {
     
     var parsedObject  : NSDictionary = NSDictionary()
     var defaults : NSUserDefaults = NSUserDefaults()
-    var loadTeams = true
     var sortOrder = 0
     
     @IBOutlet weak var updateData: UINavigationItem!
@@ -70,7 +66,7 @@ class MasterViewController: UITableViewController {
         var userAgent = "BaseballLine/\(bundle)(cepwin@gmail.com)"
         request.setValue(userAgent, forHTTPHeaderField: "User-Agent")
         if tabObj.teamHandler.count > 0 {
-            loadTeams = false
+//            loadTeams = false
         }
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
             let httpResponse = response as! NSHTTPURLResponse
@@ -176,29 +172,18 @@ class MasterViewController: UITableViewController {
                 let rank: NSInteger = resfst.valueForKey("rank") as! NSInteger
                 let sort1 = self.confDiv[conf+div]!
                 let sort : NSString = "\(sort1)\(rank)"
-            //    tabObj.teams.append("\(first_name)|\(last_name)")
-            //    tabObj.teamIds.append(resfst.valueForKey("team_id") as! String)
                 tabObj.teamHandler.updateValue(sort as! String, forKey: "\(first_name)|\(last_name);\(id)")
 
            // }
             println("Contents of res1 \(res1[i])")
         }
-        self.loadTeams = false
-       // tabObj.teams = sorted(tabObj.teams, <)
-       //  tabObj.teamIds = sorted(tabObj.teamIds, <)
+     //   self.loadTeams = false
         if(self.sortOrder == STANDINGS ) {
             self.teamT = Array(tabObj.teamHandler).sorted({$0.1 < $1.1})
         } else {
             self.teamT = Array(tabObj.teamHandler).sorted({$0.0 < $1.0})
 
         }
-    //    self.defaults.setObject(tabObj.teams, forKey: "teamNames")
-     //   self.defaults.synchronize()
-        
-        
-    //    self.defaults.setObject(tabObj.teamIds, forKey: "teamIds")
-        
-   //     self.defaults.synchronize()
         
         self.defaults.setObject(tabObj.teamIdsSM, forKey: "teamIdsSM")
         
@@ -229,13 +214,15 @@ class MasterViewController: UITableViewController {
         let tabObj = self.tabBarController as! TabBarController
         tabObj.tableview = self
         self.defaults = NSUserDefaults(suiteName: "group.com.cepwin.BaseballLine")!
-       // var teamIds1 : [String]? = //(self.defaults.objectForKey("teamIds") as? [String])
-       // var teams1 : [String]? = (self.defaults.objectForKey("teamNames") as? [String])
         var teamsSM : [String]? = (self.defaults.objectForKey("teamsSM") as? [String])
         var teamIdsSM : [String]? = (self.defaults.objectForKey("teamIdsSM") as? [String])
         var teamTup :  [String:String]? =  (self.defaults.objectForKey("teamDictionary") as? [String : String])
-        self.sortOrder  = (self.defaults.objectForKey("sortOrder") as? Int)!
-
+        let so : Int?  = self.defaults.objectForKey("sortOrder") as? Int
+        if((so) != nil)  {
+            self.sortOrder = so!
+        } else {
+        self.sortOrder  = 0
+        }
         if(teamTup != nil) {
             tabObj.teamHandler = teamTup!
             if(self.sortOrder == STANDINGS) {
@@ -243,24 +230,19 @@ class MasterViewController: UITableViewController {
             } else {
                 self.teamT =  Array(tabObj.teamHandler).sorted({$0.0 < $1.0})
             }
-            self.loadTeams = false
+//            self.loadTeams = false
 
         }else {
-            self.loadTeams = true
+  //          self.loadTeams = true
         }
         tabObj.sortOrder = self.sortOrder
         if(teamIdsSM   != nil) {
             tabObj.teamIdsSM = teamIdsSM!
-            //self.teamIds.sort($0 > $1)
             tabObj.teamIdsSM = sorted(tabObj.teamIdsSM, <)
-            // self.teamIdsSM = tabObj.teamIdsSM
-            
         }
         if(teamsSM   != nil) {
             tabObj.teamsSM = teamsSM!
-            //self.teamIds.sort($0 > $1)
             tabObj.teamsSM = sorted(tabObj.teamsSM, <)
-            // self.teamsSM = tabObj.teamsSM
             
         }
         //change here
@@ -271,20 +253,12 @@ class MasterViewController: UITableViewController {
         let tabObj = self.tabBarController as! TabBarController
         self.sortOrder = tabObj.sortOrder
         self.teamsSM = tabObj.teamsSM
-//        self.teams = tabObj.teams
         self.teamIdsSM = tabObj.teamIdsSM
- //       self.teamIds = tabObj.teamIds
-        if(self.sortOrder == self.ALPHA) {
+         if(self.sortOrder == self.ALPHA) {
             self.teamT = Array(tabObj.teamHandler).sorted({$0.0 < $1.0})
             if self.teamIdsSM.count > 0 {
             for k in 0...(self.teamIdsSM.count-1){
- //               self.teamIds = self.teamIds.filter{!contains([self.teamIdsSM[k]], $0)}
- //               self.teamIds.insert(self.teamIdsSM[k], atIndex: k)
-                
-//                self.teams = self.teams.filter{!contains([self.teamsSM[k]], $0)}
-//                self.teams.insert(self.teamsSM[k], atIndex: k)
                 var filterStr = "\(self.teamsSM[k]);\(self.teamIdsSM[k])"
-                //  filterStr = filterStr.stringByReplacingOccurrencesOfString("-", withString: " ", options: ////NSStringCompareOptions.CaseInsensitiveSearch)
                 var saveItem = teamT.filter({$0.key == filterStr})
                 self.teamT = teamT.filter({$0.key != filterStr})
                 self.teamT.insert(saveItem[0], atIndex: k)
@@ -349,8 +323,6 @@ class MasterViewController: UITableViewController {
     
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
         let tabObj = self.tabBarController as! TabBarController
-//         let rowStr1 = self.teams[indexPath.item].stringByReplacingOccurrencesOfString("|", withString: " ", options:    NSStr
-   // ingCompareOptions.CaseInsensitiveSearch)
         if(self.teamT.count > 0) {
             var teamPair = split(teamT[indexPath.item].key) {$0 == ";"}
             let saveItem = tabObj.teamIdsSM.filter({$0 == teamPair[1]})

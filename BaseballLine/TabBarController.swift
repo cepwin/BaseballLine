@@ -9,9 +9,6 @@
 import UIKit
 
 class TabBarController: UITabBarController {
-
-  //  var teams : [String] = []
- //   var teamIds : [String] = []
     
     var teamsSM : [String] = []
     var teamIdsSM : [String] = []

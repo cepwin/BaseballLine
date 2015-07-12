@@ -257,7 +257,7 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="40p-5E-NHj"/>
+                    <tabBarItem key="tabBarItem" title="Standings" id="40p-5E-NHj"/>
                     <navigationItem key="navigationItem" title="Teams" id="tQt-TN-PWz">
                         <barButtonItem key="rightBarButtonItem" id="ybB-Js-lKr">
                             <button key="customView" opaque="NO" contentMode="right" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5au-Eh-l51">
@@ -333,11 +333,11 @@
             </objects>
             <point key="canvasLocation" x="1383" y="82"/>
         </scene>
-        <!--Item-->
+        <!--Settings-->
         <scene sceneID="tEv-1d-G1q">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qb7-9L-dj8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Mhh-BF-0Xf"/>
+                    <tabBarItem key="tabBarItem" title="Settings" id="Mhh-BF-0Xf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GXM-Oo-aWO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
