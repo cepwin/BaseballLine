@@ -108,9 +108,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     self.endBackgroundTask()
 
                 }
-                reply(["error" : "error with getdata"])
-                self.endBackgroundTask()
-                
             }
             else {
                 reply(["success":"yes"])

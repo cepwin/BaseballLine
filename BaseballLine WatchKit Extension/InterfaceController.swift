@@ -48,22 +48,28 @@ class InterfaceController: WKInterfaceController {
         self.defaults = NSUserDefaults(suiteName: "group.com.cepwin.BaseballLine")!
         self.userButton.setBackgroundColor(UIColor.redColor())
         self.userButton.setTitle("Updating")
+        callParentApp()
+        
+    }
+    
+    func callParentApp() {
+        
         var dictionary = NSDictionary(objects: ["getdata"], forKeys: ["content"])
         WKInterfaceController.openParentApplication(dictionary as [NSObject : AnyObject], reply: { (replyInfo, error) -> Void in
             if(error == nil) {
                 if let response = replyInfo as? [String:AnyObject] {
                     var teamIdsSM1:[String]?  = self.defaults.objectForKey("teamIdsSM") as! [String]?
                     var teams1:[String]?  = self.defaults.objectForKey("teamsSM") as! [String]?
-                    
+                    if(teamIdsSM1 != nil) {
+                        self.teamIdsSM = teamIdsSM1!
+                        if(teams1 != nil) {
+                            self.teams = teams1!
+                        }
+                    }
                     if let content = response["content"] as? [String:[String:AnyObject]] {
                         if(content["error"] == nil) {
                             self.teamsData = content
-                            if(teamIdsSM1 != nil) {
-                                self.teamIdsSM = teamIdsSM1!
-                                if(teams1 != nil) {
-                                    self.teams = teams1!
-                                }
-                            } else {
+                            if(teamIdsSM1 == nil) {
                                 for (id, data) in content {
                                     var first_name = data["first_name"] as! String
                                     var last_name = data["last_name"] as! String
@@ -90,8 +96,9 @@ class InterfaceController: WKInterfaceController {
                     self.errorState = true
                 }
             } else {
-                self.userButton.setTitle("App Starting Try again")
-                self.errorState = true
+                //self.userButton.setTitle("App Starting Try again")
+                //self.errorState = true
+                self.callParentApp()
             }
             if(!self.errorState) {
                 self.userButton.setBackgroundColor(UIColor.blueColor())
