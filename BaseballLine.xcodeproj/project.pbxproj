@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A20DEEB81B573F710056BA77 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20DEEB41B573F710056BA77 /* MasterViewController.swift */; };
+		A20DEEB91B573F710056BA77 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20DEEB51B573F710056BA77 /* DetailViewController.swift */; };
+		A20DEEBA1B573F710056BA77 /* ConfigChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20DEEB61B573F710056BA77 /* ConfigChoiceViewController.swift */; };
+		A20DEEBB1B573F710056BA77 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20DEEB71B573F710056BA77 /* ConfigViewController.swift */; };
 		A21185C21B2E3ECF006E35B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21185C11B2E3ECF006E35B3 /* AppDelegate.swift */; };
-		A21185C61B2E3ED0006E35B3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21185C51B2E3ED0006E35B3 /* DetailViewController.swift */; };
 		A21185CB1B2E3ED0006E35B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A21185CA1B2E3ED0006E35B3 /* Images.xcassets */; };
 		A21185DA1B2E3ED1006E35B3 /* BaseballLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21185D91B2E3ED1006E35B3 /* BaseballLineTests.swift */; };
 		A21185EF1B2E3F94006E35B3 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21185EE1B2E3F94006E35B3 /* NotificationController.swift */; };
@@ -17,9 +20,8 @@
 		A21185FD1B2E3F94006E35B3 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A21185FB1B2E3F94006E35B3 /* Interface.storyboard */; };
 		A21185FF1B2E3F94006E35B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A21185FE1B2E3F94006E35B3 /* Images.xcassets */; };
 		A21186021B2E3F94006E35B3 /* BaseballLine WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A21185E71B2E3F93006E35B3 /* BaseballLine WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A2962B201B2FAAC700AA96C2 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2962B1E1B2FAAC700AA96C2 /* MasterViewController.swift */; };
+		A22603081B58609D00DE72A1 /* DivisionHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22603071B58609D00DE72A1 /* DivisionHeaderCell.swift */; };
 		A2962B211B2FAAC700AA96C2 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2962B1F1B2FAAC700AA96C2 /* TabBarController.swift */; };
-		A2962B231B2FABCC00AA96C2 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2962B221B2FABCC00AA96C2 /* ConfigViewController.swift */; };
 		A2962B251B2FABF500AA96C2 /* ConfigTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2962B241B2FABF500AA96C2 /* ConfigTableViewCell.swift */; };
 		A2CBCCA21B2FB1AA00034EE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2CBCCA01B2FB1AA00034EE0 /* Main.storyboard */; };
 		A2CBCCA51B2FB1B200034EE0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2CBCCA31B2FB1B200034EE0 /* LaunchScreen.xib */; };
@@ -27,7 +29,6 @@
 		A2CBCCAC1B2FB78200034EE0 /* TeamDetailRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CBCCA91B2FB78200034EE0 /* TeamDetailRowController.swift */; };
 		A2CBCCAF1B2FB7BE00034EE0 /* TeamsRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CBCCAE1B2FB7BE00034EE0 /* TeamsRowController.swift */; };
 		A2CBCCB51B2FC37700034EE0 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CBCCB21B2FBEF100034EE0 /* InterfaceController.swift */; };
-		A2F7454F1B49960F000B5151 /* ConfigChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7454E1B49960F000B5151 /* ConfigChoiceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,10 +70,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A20DEEB41B573F710056BA77 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		A20DEEB51B573F710056BA77 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A20DEEB61B573F710056BA77 /* ConfigChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigChoiceViewController.swift; sourceTree = "<group>"; };
+		A20DEEB71B573F710056BA77 /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		A21185BC1B2E3ECF006E35B3 /* BaseballLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseballLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21185C01B2E3ECF006E35B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A21185C11B2E3ECF006E35B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A21185C51B2E3ED0006E35B3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A21185CA1B2E3ED0006E35B3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A21185D31B2E3ED1006E35B3 /* BaseballLineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaseballLineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21185D81B2E3ED1006E35B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -86,9 +90,8 @@
 		A21185FA1B2E3F94006E35B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A21185FC1B2E3F94006E35B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		A21185FE1B2E3F94006E35B3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		A2962B1E1B2FAAC700AA96C2 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		A22603071B58609D00DE72A1 /* DivisionHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DivisionHeaderCell.swift; sourceTree = "<group>"; };
 		A2962B1F1B2FAAC700AA96C2 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		A2962B221B2FABCC00AA96C2 /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		A2962B241B2FABF500AA96C2 /* ConfigTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigTableViewCell.swift; sourceTree = "<group>"; };
 		A2962B261B2FAECB00AA96C2 /* BaseballLine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BaseballLine.entitlements; sourceTree = "<group>"; };
 		A2962B271B2FAEDD00AA96C2 /* BaseballLine WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "BaseballLine WatchKit Extension.entitlements"; sourceTree = "<group>"; };
@@ -98,7 +101,6 @@
 		A2CBCCA91B2FB78200034EE0 /* TeamDetailRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamDetailRowController.swift; sourceTree = "<group>"; };
 		A2CBCCAE1B2FB7BE00034EE0 /* TeamsRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamsRowController.swift; sourceTree = "<group>"; };
 		A2CBCCB21B2FBEF100034EE0 /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		A2F7454E1B49960F000B5151 /* ConfigChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigChoiceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,16 +153,17 @@
 		A21185BE1B2E3ECF006E35B3 /* BaseballLine */ = {
 			isa = PBXGroup;
 			children = (
+				A20DEEB41B573F710056BA77 /* MasterViewController.swift */,
+				A20DEEB51B573F710056BA77 /* DetailViewController.swift */,
+				A20DEEB61B573F710056BA77 /* ConfigChoiceViewController.swift */,
+				A20DEEB71B573F710056BA77 /* ConfigViewController.swift */,
 				A2CBCCA31B2FB1B200034EE0 /* LaunchScreen.xib */,
 				A2CBCCA01B2FB1AA00034EE0 /* Main.storyboard */,
 				A2962B261B2FAECB00AA96C2 /* BaseballLine.entitlements */,
 				A2962B241B2FABF500AA96C2 /* ConfigTableViewCell.swift */,
-				A2962B1E1B2FAAC700AA96C2 /* MasterViewController.swift */,
-				A2962B221B2FABCC00AA96C2 /* ConfigViewController.swift */,
-				A2F7454E1B49960F000B5151 /* ConfigChoiceViewController.swift */,
 				A2962B1F1B2FAAC700AA96C2 /* TabBarController.swift */,
+				A22603071B58609D00DE72A1 /* DivisionHeaderCell.swift */,
 				A21185C11B2E3ECF006E35B3 /* AppDelegate.swift */,
-				A21185C51B2E3ED0006E35B3 /* DetailViewController.swift */,
 				A21185CA1B2E3ED0006E35B3 /* Images.xcassets */,
 				A21185BF1B2E3ECF006E35B3 /* Supporting Files */,
 			);
@@ -409,13 +412,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A21185C61B2E3ED0006E35B3 /* DetailViewController.swift in Sources */,
+				A20DEEB81B573F710056BA77 /* MasterViewController.swift in Sources */,
+				A22603081B58609D00DE72A1 /* DivisionHeaderCell.swift in Sources */,
+				A20DEEBB1B573F710056BA77 /* ConfigViewController.swift in Sources */,
 				A2962B211B2FAAC700AA96C2 /* TabBarController.swift in Sources */,
+				A20DEEB91B573F710056BA77 /* DetailViewController.swift in Sources */,
+				A20DEEBA1B573F710056BA77 /* ConfigChoiceViewController.swift in Sources */,
 				A21185C21B2E3ECF006E35B3 /* AppDelegate.swift in Sources */,
 				A2962B251B2FABF500AA96C2 /* ConfigTableViewCell.swift in Sources */,
-				A2F7454F1B49960F000B5151 /* ConfigChoiceViewController.swift in Sources */,
-				A2962B231B2FABCC00AA96C2 /* ConfigViewController.swift in Sources */,
-				A2962B201B2FAAC700AA96C2 /* MasterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,7 +498,6 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -511,7 +514,6 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -530,6 +532,7 @@
 				PROVISIONING_PROFILE = "a9c46ca6-53a6-45f8-9350-75fda90169ee";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_HOST = bj.;
 			};
 			name = Debug;
 		};
@@ -540,7 +543,6 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -557,7 +559,6 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -565,9 +566,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_MAP_FILE_PATH = rder;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "a9c46ca6-53a6-45f8-9350-75fda90169ee";
 				SDKROOT = iphoneos;
+				TEST_HOST = bj.;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

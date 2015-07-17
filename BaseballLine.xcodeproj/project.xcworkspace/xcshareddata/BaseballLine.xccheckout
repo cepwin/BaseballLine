@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>FD43D0D9-F3B2-45CD-9E1F-343F3864E167</string>
 	<key>IDESourceControlProjectName</key>
-	<string>BaseballLine</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>EF7A62F698E70307AEAD71608ACC57E9EF813540</key>
 		<string>https://github.com/cepwin/BaseballLine</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>BaseballLine.xcodeproj</string>
+	<string>BaseballLine.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>EF7A62F698E70307AEAD71608ACC57E9EF813540</key>

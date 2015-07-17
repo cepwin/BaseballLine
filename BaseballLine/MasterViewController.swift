@@ -52,6 +52,36 @@ class MasterViewController: UITableViewController {
         alert.show()
     }
     
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let  headerCell = tableView.dequeueReusableCellWithIdentifier("Head") as! DivisionHeaderCell
+       // headerCell.backgroundColor = UIColor.cyanColor()
+        let tabObj = self.tabBarController as! TabBarController
+        
+        if(tabObj.sortOrder == 0) {
+            headerCell.textLabel?.text = "Alphabetical"
+        }
+        else {
+            switch (section) {
+            case 0:
+                headerCell.textLabel?.text = "National League East";
+            case 1:
+                headerCell.textLabel?.text = "National League Central";
+            case 2:
+                headerCell.textLabel?.text = "National League West";
+            case 3:
+                headerCell.textLabel?.text = "American League East";
+            case 4:
+                headerCell.textLabel?.text = "American League Central";
+            case 5:
+                headerCell.textLabel?.text = "American League West";
+            default:
+                headerCell.textLabel?.text = "Division"
+            }
+        }
+        return headerCell
+    }
+    
     func getData() {
         let tabObj = self.tabBarController as! TabBarController
         
@@ -288,10 +318,17 @@ class MasterViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let tabObj = self.tabBarController as! TabBarController
-        
+        var row = 0
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let key = nameToId(self.teamT[indexPath.item].key as String)
+                if(tabObj.sortOrder == 0) {
+                    row = indexPath.item
+                    
+                } else {
+                    row = indexPath.item+(indexPath.section*5)
+                }
+
+                let key = nameToId(self.teamT[row].key as String)
                 let object:[String:AnyObject] = self.teamDict2[key]!
                 var keys:Array<String>  = Array(object.keys) as Array<String>
                 (segue.destinationViewController as! DetailViewController).detailItem = object
@@ -307,12 +344,22 @@ class MasterViewController: UITableViewController {
     // MARK: - Table View
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        let tabObj = self.tabBarController as! TabBarController
+        if(tabObj.sortOrder == 0) {
+            return 1
+        }
+        else {
+            return 6
+        }
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let tabObj = self.tabBarController as! TabBarController
-        return tabObj.teamHandler.count
+        if(tabObj.sortOrder==0) {
+            return tabObj.teamHandler.count
+        } else {
+            return 5
+        }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -324,15 +371,20 @@ class MasterViewController: UITableViewController {
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
         let tabObj = self.tabBarController as! TabBarController
         if(self.teamT.count > 0) {
-            var teamPair = split(teamT[indexPath.item].key) {$0 == ";"}
-            let saveItem = tabObj.teamIdsSM.filter({$0 == teamPair[1]})
+            var teamPair = []
+            if(tabObj.sortOrder == 1){
+                teamPair = split(teamT[indexPath.item+(indexPath.section*5)].key) {$0 == ";"}
+            } else {
+                teamPair = split(teamT[indexPath.item].key) {$0 == ";"}
+            }
+             let saveItem = tabObj.teamIdsSM.filter({$0 == teamPair[1] as! String})
             if(saveItem.count > 0) {
                 cell.backgroundColor = UIColor.redColor()
             } else
             {
                 cell.backgroundColor = defaultBG
             }
-            var teamName = teamPair[0]
+            var teamName = teamPair[0] as! String
             let rowStr = teamName.stringByReplacingOccurrencesOfString("|", withString: " ", options: NSStringCompareOptions.CaseInsensitiveSearch)
 
             cell.textLabel!.text = rowStr as NSString as String
