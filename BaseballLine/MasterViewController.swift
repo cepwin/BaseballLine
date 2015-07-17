@@ -234,6 +234,14 @@ class MasterViewController: UITableViewController {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        let tabObj = self.tabBarController as! TabBarController
+        let tabBarItem: UITabBarItem = tabObj.tabBarItem
+        let appearance = UITabBarItem.appearance()
+        let attributes = [NSFontAttributeName:UIFont(name: "American Typewriter", size: 20)]
+        let font = UIFont(name: "American Typewriter", size: 20)
+        if(font != nil) {
+            appearance.setTitleTextAttributes([NSFontAttributeName: font!], forState: UIControlState.Normal)
+        }
     }
 
     override func viewDidLoad() {
