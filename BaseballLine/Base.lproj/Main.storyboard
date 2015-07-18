@@ -46,6 +46,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Apa-rM-65c" firstAttribute="centerY" secondItem="xkd-Ju-27Y" secondAttribute="centerY" id="N2n-jP-xdN"/>
+                                                <constraint firstItem="Apa-rM-65c" firstAttribute="leading" secondItem="xkd-Ju-27Y" secondAttribute="leading" constant="17" id="OTP-Ja-ctc"/>
                                                 <constraint firstItem="Apa-rM-65c" firstAttribute="leadingMargin" secondItem="xkd-Ju-27Y" secondAttribute="leading" constant="25" id="uST-Ui-JKl"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -58,16 +59,10 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M8X-kT-fsD" id="oiL-lQ-O6a">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kta-wW-Psz">
-                                                    <rect key="frame" x="15" y="11" width="56" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FiT-67-hnM">
-                                                    <rect key="frame" x="322" y="7" width="227" height="29"/>
+                                                    <rect key="frame" x="371" y="8" width="221" height="29"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="227" id="rpd-3X-IOA"/>
+                                                        <constraint firstAttribute="width" constant="221" id="rpd-3X-IOA"/>
                                                     </constraints>
                                                     <segments>
                                                         <segment title="Alphabetical"/>
@@ -77,12 +72,18 @@
                                                         <action selector="selectSort:" destination="WJL-3y-thw" eventType="valueChanged" id="XlU-06-vwh"/>
                                                     </connections>
                                                 </segmentedControl>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kta-wW-Psz">
+                                                    <rect key="frame" x="17" y="12" width="56" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="FiT-67-hnM" secondAttribute="trailing" constant="43" id="90n-8t-1br"/>
-                                                <constraint firstItem="Kta-wW-Psz" firstAttribute="leading" secondItem="oiL-lQ-O6a" secondAttribute="leadingMargin" constant="7" id="LSK-Wv-Bb1"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="FiT-67-hnM" secondAttribute="trailing" id="90n-8t-1br"/>
                                                 <constraint firstItem="Kta-wW-Psz" firstAttribute="centerY" secondItem="FiT-67-hnM" secondAttribute="centerY" id="ZIY-Eo-ZKW"/>
-                                                <constraint firstItem="Kta-wW-Psz" firstAttribute="centerY" secondItem="oiL-lQ-O6a" secondAttribute="centerY" id="bjf-ca-5Fv"/>
+                                                <constraint firstItem="Kta-wW-Psz" firstAttribute="centerY" secondItem="oiL-lQ-O6a" secondAttribute="centerY" constant="0.5" id="bjf-ca-5Fv"/>
+                                                <constraint firstItem="Kta-wW-Psz" firstAttribute="leading" secondItem="oiL-lQ-O6a" secondAttribute="leading" constant="17" id="zdz-q2-uK8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -228,7 +229,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <label key="tableHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QAY-AV-I76">
+                        <label key="tableHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" text="Team Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QAY-AV-I76">
                             <rect key="frame" x="0.0" y="64" width="600" height="43"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -236,13 +237,19 @@
                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </label>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="2pz-XF-uhl" style="IBUITableViewCellStyleDefault" id="m0d-ak-lc9">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="2pz-XF-uhl" style="IBUITableViewCellStyleDefault" id="m0d-ak-lc9" customClass="MainTableViewCell" customModule="BaseballLine" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m0d-ak-lc9" id="d3P-M7-ByW">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgA-au-Md9">
+                                            <rect key="frame" x="393" y="14" width="56" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2pz-XF-uhl">
                                             <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
@@ -251,9 +258,14 @@
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="kgA-au-Md9" firstAttribute="centerY" secondItem="2pz-XF-uhl" secondAttribute="centerY" constant="2.5" id="dWh-uD-iR2"/>
+                                        <constraint firstItem="kgA-au-Md9" firstAttribute="centerX" secondItem="d3P-M7-ByW" secondAttribute="centerX" constant="137.5" id="ht1-R8-aoy"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.71599433059999995" green="0.80043936230000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
+                                    <outlet property="record" destination="kgA-au-Md9" id="bXk-yN-YlX"/>
                                     <segue destination="Ah7-4n-0Wa" kind="show" identifier="showDetail" id="jUr-3t-vfg"/>
                                 </connections>
                             </tableViewCell>

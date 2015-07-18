@@ -371,12 +371,12 @@ class MasterViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! MainTableViewCell
         self.configureCell(cell, atIndexPath: indexPath)
         return cell
     }
     
-    func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
+    func configureCell(cell: MainTableViewCell, atIndexPath indexPath: NSIndexPath) {
         let tabObj = self.tabBarController as! TabBarController
         if(self.teamT.count > 0) {
             var teamPair = []
@@ -393,8 +393,16 @@ class MasterViewController: UITableViewController {
                 cell.backgroundColor = defaultBG
             }
             var teamName = teamPair[0] as! String
+            var teamObj:[String:AnyObject] = [String:AnyObject]()
+            var record : String = ""
+            var statId : String = "won-lost"
+            if(teamDict2.count > 0) {
+                teamObj = self.teamDict2[teamPair[1] as! String]!
+                record  = teamObj[statId]! as! String
+             }
             let rowStr = teamName.stringByReplacingOccurrencesOfString("|", withString: " ", options: NSStringCompareOptions.CaseInsensitiveSearch)
-
+            cell.record.text = record
+            
             cell.textLabel!.text = rowStr as NSString as String
         }
     }

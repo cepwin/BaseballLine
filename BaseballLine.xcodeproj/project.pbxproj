@@ -21,6 +21,7 @@
 		A21185FF1B2E3F94006E35B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A21185FE1B2E3F94006E35B3 /* Images.xcassets */; };
 		A21186021B2E3F94006E35B3 /* BaseballLine WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A21185E71B2E3F93006E35B3 /* BaseballLine WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A22603081B58609D00DE72A1 /* DivisionHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22603071B58609D00DE72A1 /* DivisionHeaderCell.swift */; };
+		A28D61241B5ABAB800E5E13D /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28D61231B5ABAB800E5E13D /* MainTableViewCell.swift */; };
 		A2962B211B2FAAC700AA96C2 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2962B1F1B2FAAC700AA96C2 /* TabBarController.swift */; };
 		A2962B251B2FABF500AA96C2 /* ConfigTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2962B241B2FABF500AA96C2 /* ConfigTableViewCell.swift */; };
 		A2CBCCA21B2FB1AA00034EE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2CBCCA01B2FB1AA00034EE0 /* Main.storyboard */; };
@@ -91,6 +92,7 @@
 		A21185FC1B2E3F94006E35B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		A21185FE1B2E3F94006E35B3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A22603071B58609D00DE72A1 /* DivisionHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DivisionHeaderCell.swift; sourceTree = "<group>"; };
+		A28D61231B5ABAB800E5E13D /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		A2962B1F1B2FAAC700AA96C2 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A2962B241B2FABF500AA96C2 /* ConfigTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigTableViewCell.swift; sourceTree = "<group>"; };
 		A2962B261B2FAECB00AA96C2 /* BaseballLine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BaseballLine.entitlements; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				A20DEEB71B573F710056BA77 /* ConfigViewController.swift */,
 				A2CBCCA31B2FB1B200034EE0 /* LaunchScreen.xib */,
 				A2CBCCA01B2FB1AA00034EE0 /* Main.storyboard */,
+				A28D61231B5ABAB800E5E13D /* MainTableViewCell.swift */,
 				A2962B261B2FAECB00AA96C2 /* BaseballLine.entitlements */,
 				A2962B241B2FABF500AA96C2 /* ConfigTableViewCell.swift */,
 				A2962B1F1B2FAAC700AA96C2 /* TabBarController.swift */,
@@ -413,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A20DEEB81B573F710056BA77 /* MasterViewController.swift in Sources */,
+				A28D61241B5ABAB800E5E13D /* MainTableViewCell.swift in Sources */,
 				A22603081B58609D00DE72A1 /* DivisionHeaderCell.swift in Sources */,
 				A20DEEBB1B573F710056BA77 /* ConfigViewController.swift in Sources */,
 				A2962B211B2FAAC700AA96C2 /* TabBarController.swift in Sources */,
